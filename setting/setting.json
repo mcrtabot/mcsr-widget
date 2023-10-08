@@ -1,0 +1,140 @@
+{
+    "//": "ウィジェットの幅(数値: 固定したい場合、null: 指定なし",
+    "width": 192,
+
+    "//": "ウィジェットの背景色 (transparent で無色透明指定可能)",
+    "backgroundColor": "#000000",
+
+    "//": "ウィジェットのデフォルト文字色 (各設定で上書きできます)",
+    "textColor": "#ffffff",
+
+    "//": "デフォルトのフォント (各設定で上書きできます)",
+    "font": {
+        "fontFamily": "Minecraft, sans-serif",
+        "fontSize": "18px",
+        "fontWeight": "normal",
+        "fontStyle": "normal"
+    },
+
+    "//": "区切り線のデフォルト色",
+    "separatorColor": "#ffffff",
+
+    "//": "ウィジェットの構成",
+    "//": "画面に表示するコンポーネントおよびその順番とスタイルを指定できます。",
+    "//": "ここに記載されなかったコンポーネントは画面に表示されません。",
+    "//": "",
+    "//": "利用できる項目",
+    "//": "'[PersonalBest]' 自己ベストのタイムライン",
+    "//": "'[CurrentRun]' 現在実行中のランのタイムライン",
+    "//": "'[RecentRuns]' 最近のランのタイムライン",
+    "//": "'[WorldNumber] | {style}' ワールド番号(スタイル指定可能)",
+    "//": "'[Label] | {ラベルの内容} | {style}' ラベル",
+    "//": "'[---] | {style}' セパレータ",
+    "//": "",
+    "components": [
+        "[PersonalBest]",
+        "[---] | ",
+        "[Label] | World # | font-size: 18px;",
+        "[WorldNumber] | font-size: 32px; text-align: center;",
+        "[CurrentRun]",
+        "[---] | ",
+        "[Label] | Recent Runs ... | font-size: 18px;",
+        "[RecentRuns]"
+    ],
+
+    "//": "表示する項目名 (displayItemLabel が true の場合に表示されます)",
+    "timelineItemLabels": {
+        "enter_nether": "ネザーイン",
+        "enter_bastion": "廃要塞",
+        "enter_fortress": "ネザー要塞",
+        "nether_travel": "ブラインド",
+        "enter_stronghold": "エンド要塞",
+        "enter_end": "エンド",
+        "complete": "ＧＧ"
+    },
+
+    "//": "------------------------------------------------------------",
+    "//": " タイムラインの設定",
+    "//": "------------------------------------------------------------",
+
+    "//": "タイムラインのデフォルト設定（個別設定で上書き可能）",
+    "timeline": {
+        "//": "フォント (デフォルトのフォントを上書きする場合に指定)",
+        "font": {
+            "fontFamily": "Minecraft, monospace, sans-serif",
+            "fontSize": "18px"
+        },
+
+        "//": "文字色",
+        "textColor": "#333333",
+
+        "//": "PBを上回っている場合のハイライト文字色",
+        "highlightTextColor": "#ff3333",
+
+        "//": "背景色",
+        "backgroundColor": "#ffffff",
+
+        "//": "未完走の場合の背景色 (未設定の場合 backgroundColor が利用されます)",
+        "imcompletedBackgroundColor": "",
+
+        "//": "タイムラインのタイトルを表示するか",
+        "displayTitle": true,
+
+        "//": "タイムラインの固定タイトル",
+        "//": "[WorldNumber]を指定した場合のみ、特別にワールドナンバーが表示されます",
+        "title": "",
+
+        "//": "タイムラインの各項目のラベルを表示するか",
+        "displayItemLabel": false,
+
+        "//": "項目ラベルのフォント",
+        "itemLabelFont": {
+            "fontFamily": "sans-serif",
+            "fontSize": "0.7em",
+            "fontWeight": "bold"
+        },
+        "//": "PBからの差分タイムを表示するか",
+        "displayItemDiffTime": false,
+        "//": "PBからの差分タイムの位置 (rigth: 右, left: 左, bottom: 次の行)",
+        "itemDiffTimePosition": "right",
+        "//": "PBからの差分タイムのフォント",
+        "itemDiffTimeFont": {
+            "fontSize": "0.7em"
+        }
+    },
+
+
+    "//": "自己ベストのタイムラインの上書き設定",
+    "pbTimeline": {
+        "title": "PB's Timeline",
+        "displayItemLabel": true
+    },
+
+    "//": "現在のランのタイムラインの上書き設定",
+    "currentRunTimeline": {
+        "backgroundColor": "#ccccff",
+        "displayTitle": true,
+        "title": "LIVE",
+        "displayItemDiffTime": true
+    },
+
+    "//": "最近のランのタイムラインの上書き設定",
+    "recentRunsTimeline": {
+        "imcompletedBackgroundColor": "#cccccc",
+        "title": "[WorldNumber]",
+        "displayItemDiffTime": true
+    },
+    "//": "未完走のランのタイムラインを表示するか",
+    "displayRecentRunsIncompletedRuns": true,
+
+    "//": "ワールドナンバーのタイプ (relative: ウィジェット開始からのカウント, absolute: ワールド名そのまま)",
+    "//": "マルチインスタンスの場合relativeはうまく動作しないため、absoluteを設定するか、ワールドナンバーを利用しないでください。",
+    "worldNumberType": "relative",
+
+    "//": "現在のランのタイムラインに次のアイテム（次に行く場所）を表示するか",
+    "displayCurrentRunNextTimelineItem": true,
+    "//": "現在のランの進行中の項目の時間のスタイル (hyphen: '--:--', random: ランダムな数字)",
+    "currentRunNextTimelineItemStyle": "hyphen",
+
+    "//": ""
+}

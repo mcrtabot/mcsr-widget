@@ -1,0 +1,48 @@
+services:
+  app:
+    build: ./app
+    volumes:
+      - ./app:/app
+      - data:/data
+      - ${SPEEDRUNIGT_RECORDS_DIR_01:-empty}:/records/01
+      - ${SPEEDRUNIGT_RECORDS_DIR_02:-empty}:/records/02
+      - ${SPEEDRUNIGT_RECORDS_DIR_03:-empty}:/records/03
+      - ${MINECRAFT_SAVE_DIR_01:-empty}:/saves/01
+      - ${MINECRAFT_SAVE_DIR_02:-empty}:/saves/02
+      - ${MINECRAFT_SAVE_DIR_03:-empty}:/saves/03
+      - ${MINECRAFT_SAVE_DIR_04:-empty}:/saves/04
+      - ${MINECRAFT_SAVE_DIR_05:-empty}:/saves/05
+      - ${MINECRAFT_SAVE_DIR_06:-empty}:/saves/06
+      - ${MINECRAFT_SAVE_DIR_07:-empty}:/saves/07
+      - ${MINECRAFT_SAVE_DIR_08:-empty}:/saves/08
+      - ${MINECRAFT_SAVE_DIR_09:-empty}:/saves/09
+      - ${MINECRAFT_SAVE_DIR_10:-empty}:/saves/10
+      - ${MINECRAFT_SAVE_DIR_11:-empty}:/saves/11
+      - ${MINECRAFT_SAVE_DIR_12:-empty}:/saves/12
+      - ${MINECRAFT_SAVE_DIR_13:-empty}:/saves/13
+      - ${MINECRAFT_SAVE_DIR_14:-empty}:/saves/14
+      - ${MINECRAFT_SAVE_DIR_15:-empty}:/saves/15
+      - ${MINECRAFT_SAVE_DIR_16:-empty}:/saves/16
+      - ${MINECRAFT_SAVE_DIR_17:-empty}:/saves/17
+      - ${MINECRAFT_SAVE_DIR_18:-empty}:/saves/18
+      - ${MINECRAFT_SAVE_DIR_19:-empty}:/saves/19
+      - ${MINECRAFT_SAVE_DIR_20:-empty}:/saves/20
+    working_dir: /app
+    command: python -m widget
+    tty: true
+    environment:
+      - WIDGET_INTERVAL=${WIDGET_INTERVAL}
+      - WORLD_NAME_PREFIX=${WORLD_NAME_PREFIX}
+
+  web:
+    image: nginx:alpine-slim
+    ports:
+      - "1161:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+      - ./setting:/usr/share/nginx/html/data/setting
+      - data:/usr/share/nginx/html/data/widget
+
+volumes:
+  data:
+  empty:

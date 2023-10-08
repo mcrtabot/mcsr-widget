@@ -1,0 +1,251 @@
+{
+    "base_run_number": 38310,
+    "runs": 523,
+    "completes": 75,
+    "records": [
+        {
+            "id": "01222835-643a-42fd-9795-cb8156f94fcd",
+            "run_number": 38823,
+            "mc_version": "1.16.1",
+            "speedrunigt_version": "13.6+1.16.1",
+            "category": "ANY",
+            "run_type": "random_seed",
+            "is_completed": true,
+            "is_coop": false,
+            "is_hardcore": false,
+            "world_name": "Random Speedrun #41347",
+            "date": 1696042847530,
+            "retimed_igt": 1419000,
+            "final_igt": 1419000,
+            "final_rta": 1419000,
+            "open_lan": null,
+            "timelines": [
+                {
+                    "name": "enter_nether",
+                    "igt": 390000,
+                    "rta": 390000
+                },
+                {
+                    "name": "enter_bastion",
+                    "igt": 463790,
+                    "rta": 463790
+                },
+                {
+                    "name": "enter_fortress",
+                    "igt": 743840,
+                    "rta": 743840
+                },
+                {
+                    "name": "nether_travel",
+                    "igt": 964640,
+                    "rta": 964640
+                },
+                {
+                    "name": "nether_travel_blind",
+                    "igt": 1475791,
+                    "rta": 1475791
+                },
+                {
+                    "name": "enter_stronghold",
+                    "igt": 1080000,
+                    "rta": 1080000
+                },
+                {
+                    "name": "portal_no_1",
+                    "igt": 1220000,
+                    "rta": 1220000
+                },
+                {
+                    "name": "enter_end",
+                    "igt": 1229019,
+                    "rta": 1229019
+                },
+                {
+                    "name": "kill_ender_dragon",
+                    "igt": 1300000,
+                    "rta": 1300000
+                }
+            ]
+        },
+        {
+            "id": "bb3afe1f-6b78-4060-963d-de259c98ec3d",
+            "run_number": 38822,
+            "mc_version": "1.16.1",
+            "speedrunigt_version": "13.5+1.16.1",
+            "category": "ANY",
+            "run_type": "random_seed",
+            "is_completed": false,
+            "is_coop": false,
+            "is_hardcore": false,
+            "world_name": "Random Speedrun #38822",
+            "date": 1693892454893,
+            "retimed_igt": 1152493,
+            "final_igt": 1152493,
+            "final_rta": 1344782,
+            "open_lan": null,
+            "timelines": [
+                {
+                    "name": "found_villager",
+                    "igt": 544201,
+                    "rta": 544274
+                },
+                {
+                    "name": "enter_nether",
+                    "igt": 757301,
+                    "rta": 757393
+                },
+                {
+                    "name": "enter_fortress",
+                    "igt": 988026,
+                    "rta": 1168063
+                }
+            ]
+        },
+
+        {
+            "id": "9b506f8d-d8d1-4c1a-9ec8-e5a323af7190",
+            "run_number": 38739,
+            "mc_version": "1.16.1",
+            "speedrunigt_version": "13.5+1.16.1",
+            "category": "ANY",
+            "run_type": "random_seed",
+            "is_completed": false,
+            "is_coop": false,
+            "is_hardcore": false,
+            "world_name": "Random Speedrun #38739",
+            "date": 1693671201921,
+            "retimed_igt": 367605,
+            "final_igt": 367605,
+            "final_rta": 1052127,
+            "open_lan": null,
+            "timelines": [
+                {
+                    "name": "enter_nether",
+                    "igt": 236801,
+                    "rta": 236634
+                },
+                {
+                    "name": "enter_bastion",
+                    "igt": 263905,
+                    "rta": 264680
+                }
+            ]
+        },
+        {
+            "id": "46a8b3e2-2ecb-4aa4-8193-4c175d0b1e8b",
+            "run_number": 38513,
+            "mc_version": "1.16.1",
+            "speedrunigt_version": "13.5+1.16.1",
+            "category": "ANY",
+            "run_type": "random_seed",
+            "is_completed": false,
+            "is_coop": false,
+            "is_hardcore": false,
+            "world_name": "Random Speedrun #38513",
+            "date": 1693648283853,
+            "retimed_igt": 269842,
+            "final_igt": 257961,
+            "final_rta": 274926,
+            "open_lan": null,
+            "timelines": [
+                {
+                    "name": "enter_nether",
+                    "igt": 215896,
+                    "rta": 215805
+                }
+            ]
+        },
+        {
+            "id": "0c4ad15d-d3dc-4d39-9c69-f1ebd3efd68f",
+            "run_number": 38371,
+            "mc_version": "1.16.1",
+            "speedrunigt_version": "13.5+1.16.1",
+            "category": "ANY",
+            "run_type": "random_seed",
+            "is_completed": false,
+            "is_coop": false,
+            "is_hardcore": false,
+            "world_name": "Random Speedrun #38371",
+            "date": 1693647482460,
+            "retimed_igt": 525265,
+            "final_igt": 524387,
+            "final_rta": 536179,
+            "open_lan": null,
+            "timelines": [
+                {
+                    "name": "enter_nether",
+                    "igt": 317747,
+                    "rta": 317746
+                }
+            ]
+        },
+        {
+            "id": "615bdee4-23b6-45d9-aef2-d980585bf236",
+            "run_number": 38329,
+            "mc_version": "1.16.1",
+            "speedrunigt_version": "13.5+1.16.1",
+            "category": "ANY",
+            "run_type": "random_seed",
+            "is_completed": false,
+            "is_coop": false,
+            "is_hardcore": false,
+            "world_name": "Random Speedrun #38329",
+            "date": 1693646598370,
+            "retimed_igt": 350461,
+            "final_igt": 349288,
+            "final_rta": 355804,
+            "open_lan": null,
+            "timelines": [
+                {
+                    "name": "enter_nether",
+                    "igt": 283947,
+                    "rta": 283950
+                }
+            ]
+        }
+    ],
+    "running_record": {
+        "id": "",
+        "run_number": 41456,
+        "mc_version": "1.16.1",
+        "speedrunigt_version": "13.6+1.16.1",
+        "category": "ANY",
+        "run_type": "random_seed",
+        "is_completed": false,
+        "is_coop": false,
+        "is_hardcore": false,
+        "world_name": "Random Speedrun #41456",
+        "date": 1696254818431,
+        "retimed_igt": 1278616,
+        "final_igt": 0,
+        "final_rta": 0,
+        "open_lan": null,
+        "timelines": [
+            {
+                "name": "enter_nether",
+                "igt": 282366,
+                "rta": 282366
+            },
+            {
+                "name": "enter_bastion",
+                "igt": 362270,
+                "rta": 362270
+            },
+            {
+                "name": "enter_fortress",
+                "igt": 700000,
+                "rta": 700000
+            },
+            {
+                "name": "nether_travel",
+                "igt": 991870,
+                "rta": 991870
+            },
+            {
+                "name": "enter_stronghold",
+                "igt": 1200000,
+                "rta": 1200000
+            }
+        ]
+    }
+}
