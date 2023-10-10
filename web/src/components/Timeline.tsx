@@ -84,6 +84,7 @@ export const Timeline = ({
     displayItemDiffTime,
     itemDiffTimePosition,
     itemDiffTimeFont,
+    iconPattern,
   },
 }: TimelineProps) => {
   const isCompleted = !!timeline.find((item) => item.name === 'complete');
@@ -154,7 +155,7 @@ export const Timeline = ({
               <React.Fragment key={name}>
                 <TLItem className="timeline__item">
                   <IconCell>
-                    <TLIcon className="timeline__item__icon" name={name} />
+                    <TLIcon className="timeline__item__icon" name={name} pattern={iconPattern} />
                   </IconCell>
 
                   {displayItemLabel && (
@@ -202,7 +203,7 @@ export const Timeline = ({
           {!isCompleted && !displayAllTimeline && displayNextTimelineItem && (
             <TLItem className="timeline__item--next">
               <IconCell>
-                <TLIcon className="timeline__item__icon" name={nextItemName} />
+                <TLIcon className="timeline__item__icon" name={nextItemName} pattern={iconPattern} />
               </IconCell>
 
               {displayItemDiffTime && itemDiffTimePosition === 'left' && (

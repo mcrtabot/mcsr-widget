@@ -66,6 +66,7 @@ export type TimelineSetting = {
   displayItemDiffTime: boolean;
   itemDiffTimePosition: TimelineItemDiffPosition;
   itemDiffTimeFont: FontSetting;
+  iconPattern: 1 | 2;
 };
 
 export type Setting = {

@@ -84,6 +84,11 @@
         "//": "[WorldNumber]を指定した場合のみ、特別にワールドナンバーが表示されます",
         "title": "",
 
+        "//": "タイムラインのアイコンのパターン",
+        "//": "1: enter_bastion ピグリンの頭、 enther_fortress ブレイズの頭",
+        "//": "2: enter_bastion きらめくブラックストーン、 enther_fortress ネザーレンガ",
+        "iconPattern": 1,
+
         "//": "タイムラインの各項目のラベルを表示するか",
         "displayItemLabel": false,
 
