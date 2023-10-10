@@ -113,6 +113,10 @@ class MCSRWidgetHandler:
             except FileNotFoundError:
                 logger.info("ファイルが見つからない %s", file)
                 continue
+            except json.JSONDecodeError:
+                logger.info("解析できないファイル %s", file)
+                state["ignore_record_ids"].add(record_id)
+                continue
 
             if data["date"] < state["start_time"]:
                 # ウィジェット開始時間より前のレコードは無視リストに追加
