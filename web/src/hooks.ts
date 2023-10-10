@@ -5,7 +5,7 @@ import { Setting, TimelineName, TimelineSetting, WidgetData } from './types';
 const REFRESH_INTERVAL = 1000;
 
 const fetcher = async (path: string) => {
-  const response = await fetch(path);
+  const response = await fetch(path, { cache: 'no-store' });
   return await response.json();
 };
 
