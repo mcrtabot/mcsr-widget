@@ -266,16 +266,16 @@ class MCSRWidgetHandler:
             speedrunigt_version=record_data["speedrunigt_version"],
             category=record_data["category"],
             run_type=record_data["run_type"],
-            is_completed=running_data["isCompleted"],
-            is_coop=running_data["isCoop"],
-            is_hardcore=running_data["isHardcore"],
+            is_completed=record_data["is_completed"],
+            is_coop=record_data["is_coop"],
+            is_hardcore=record_data["is_hardcore"],
             world_name=record_data["world_name"],
             date=record_data["date"],
-            retimed_igt=running_data["retimedIGTTime"],
-            final_igt=running_data["endIGTTime"],
-            final_rta=running_data["endTime"],
+            retimed_igt=record_data["retimed_igt"],
+            final_igt=record_data["final_igt"],
+            final_rta=record_data["final_rta"],
             open_lan=record_data["open_lan"],
-            timelines=running_data["timelines"],
+            timelines=record_data["timelines"],
         )
 
         return record
