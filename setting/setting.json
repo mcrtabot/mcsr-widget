@@ -3,10 +3,10 @@
     "width": 192,
 
     "//": "ウィジェットの背景色 (transparent で無色透明指定可能)",
-    "backgroundColor": "#000000",
+    "backgroundColor": "transparent",
 
     "//": "ウィジェットのデフォルト文字色 (各設定で上書きできます)",
-    "textColor": "#ffffff",
+    "textColor": "#111111",
 
     "//": "デフォルトのフォント (各設定で上書きできます)",
     "font": {
@@ -49,8 +49,8 @@
         "enter_fortress": "ネザー要塞",
         "nether_travel": "ブラインド",
         "enter_stronghold": "エンド要塞",
-        "enter_end": "エンド",
-        "complete": "ＧＧ"
+        "enter_end": "エンドイン",
+        "complete": "GG"
     },
 
     "//": "------------------------------------------------------------",
@@ -61,18 +61,18 @@
     "timeline": {
         "//": "フォント (デフォルトのフォントを上書きする場合に指定)",
         "font": {
-            "fontFamily": "Minecraft, monospace, sans-serif",
+            "fontFamily": "Minecraft, sans-serif",
             "fontSize": "18px"
         },
 
         "//": "文字色",
-        "textColor": "#333333",
+        "textColor": "#ffffff",
 
         "//": "PBを上回っている場合のハイライト文字色",
-        "highlightTextColor": "#ff3333",
+        "highlightTextColor": "#ff6666",
 
         "//": "背景色",
-        "backgroundColor": "#ffffff",
+        "backgroundColor": "rgba(0,0,0,0.98)",
 
         "//": "未完走の場合の背景色 (未設定の場合 backgroundColor が利用されます)",
         "imcompletedBackgroundColor": "",
@@ -117,7 +117,7 @@
 
     "//": "現在のランのタイムラインの上書き設定",
     "currentRunTimeline": {
-        "backgroundColor": "#ccccff",
+        "backgroundColor": "rgba(0,0,0,0.98)",
         "displayTitle": true,
         "title": "LIVE",
         "displayItemDiffTime": true
@@ -125,7 +125,7 @@
 
     "//": "最近のランのタイムラインの上書き設定",
     "recentRunsTimeline": {
-        "imcompletedBackgroundColor": "#cccccc",
+        "imcompletedBackgroundColor": "rgba(96,96,96,0.98)",
         "title": "[WorldNumber]",
         "displayItemDiffTime": true
     },
