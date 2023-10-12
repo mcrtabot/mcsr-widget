@@ -12,3 +12,4 @@ __pycache__
 .mypy_cache
 .vscode
 /dist
+mcsr-igt-timeline-widget-*

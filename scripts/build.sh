@@ -1,15 +1,24 @@
 #!/bin/bash
 
+if [ "$1" == "" ]; then
+    echo バージョンを指定してください
+    exit 1
+fi
+
+version="$1"
+release_name="mcsr-igt-timeline-widget-${version}"
+echo "${release_name}"
+
 cd $(dirname $0)/..
 
-rm -rf dist
-mkdir dist
+rm -rf mcsr-igt-timeline-widget-*
+mkdir "${release_name}"
 
 cd web
 yarn build
 
 cd ../
-mv web/build dist/html
+mv web/build "${release_name}"/html
 cp -pr \
     app \
     setting \
@@ -20,4 +29,6 @@ cp -pr \
     scripts/mcsr-igt-timeline-widget.sh \
     scripts/mcsr-igt-timeline-widget-stop.sh \
     docs/readme.txt \
-    dist/.
+    ${release_name}/.
+
+zip -r ${release_name}.zip ${release_name}
