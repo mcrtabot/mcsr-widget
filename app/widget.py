@@ -275,7 +275,7 @@ class MCSRWidgetHandler:
             final_igt=record_data["final_igt"],
             final_rta=record_data["final_rta"],
             open_lan=record_data["open_lan"],
-            timelines=record_data["timelines"],
+            timelines=running_data["timelines"],
         )
 
         return record
