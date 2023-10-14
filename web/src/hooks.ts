@@ -49,10 +49,10 @@ const mergeTimelineSetting = (a: TimelineSetting, b: TimelineSetting) => {
 
 export const useSetting = (name: string | null) => {
   const path = !name ? '/data/setting/setting.json' : `/data/setting/setting_${name}.json`;
-  const { isLoading, data: rawSetting } = useSWR<Setting>(path, fetcher, { refreshInterval: REFRESH_INTERVAL });
+  const { isLoading, data: rawSetting, error } = useSWR<Setting>(path, fetcher, { refreshInterval: REFRESH_INTERVAL });
 
-  if (!rawSetting) {
-    return { isLoading, setting: undefined };
+  if (isLoading || !rawSetting || !!error) {
+    return { isLoading, setting: undefined, hasError: !!error };
   }
 
   const setting: Setting = {
@@ -67,20 +67,28 @@ export const useSetting = (name: string | null) => {
 
 export const useWidgetData = (isDemo: boolean) => {
   const path = !isDemo ? '/data/widget/widget.json' : '/data/demo/widget.json';
-  const { data } = useSWR<WidgetData>(path, fetcher, { refreshInterval: REFRESH_INTERVAL });
-  return data;
+  const { isLoading, data, error } = useSWR<WidgetData>(path, fetcher, { refreshInterval: REFRESH_INTERVAL });
+  return { isLoading, data, hasError: !!error };
 };
 
 export const usePBSetting = (isDemo: boolean) => {
   const path = !isDemo ? '/data/setting/pb.json' : '/data/demo/pb.json';
-  const { data } = useSWR<{ name: TimelineName; igt: string }[]>(path, fetcher, { refreshInterval: REFRESH_INTERVAL });
+  const {
+    isLoading,
+    data: rawPBSetting,
+    error,
+  } = useSWR<{ name: TimelineName; igt: string }[]>(path, fetcher, {
+    refreshInterval: REFRESH_INTERVAL,
+  });
 
-  if (!data) {
-    return [];
+  if (isLoading || !rawPBSetting || !!error) {
+    return { isLoading, data: [], hasError: !!error };
   }
 
-  return data.map((item) => ({
+  const data = rawPBSetting.map((item) => ({
     name: item.name,
     igt: convertTimeToMilliSeconds(item.igt),
   }));
+
+  return { isLoading, data, hasError: !!error };
 };

@@ -1,9 +1,9 @@
 [
-    { "name": "enter_nether", "igt": "05:04" },
-    { "name": "enter_bastion", "igt": "06:12" },
-    { "name": "enter_fortress", "igt": "11:32" },
-    { "name": "nether_travel", "igt": "16:06" },
-    { "name": "enter_stronghold", "igt": "19:43" },
-    { "name": "enter_end", "igt": "20:10" },
-    { "name": "complete", "igt": "22:48" }
+    { "name": "enter_nether", "igt": "00:00" },
+    { "name": "enter_bastion", "igt": "00:00" },
+    { "name": "enter_fortress", "igt": "00:00" },
+    { "name": "nether_travel", "igt": "00:00" },
+    { "name": "enter_stronghold", "igt": "00:00" },
+    { "name": "enter_end", "igt": "00:00" },
+    { "name": "complete", "igt": "00:00" }
 ]

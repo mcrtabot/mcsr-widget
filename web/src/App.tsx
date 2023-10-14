@@ -31,21 +31,50 @@ const App = () => {
   const isDemo = params.get('demo') === '1';
   const widgetName = params.get('widget');
 
-  const widgetData = useWidgetData(isDemo);
-  const { isLoading, setting } = useSetting(widgetName);
-  const pbTimeline = usePBSetting(isDemo);
+  const { isLoading: isLoadingWidgetData, data: widgetData, hasError: hasErrorWidgetData } = useWidgetData(isDemo);
+  const { isLoading: isLoadingSetting, setting, hasError: hasErrorSetting } = useSetting(widgetName);
+  const { isLoading: isLoadingPBTimeline, data: pbTimeline, hasError: hasErrorPBTimeline } = usePBSetting(isDemo);
 
-  if (isLoading) {
+  if (isLoadingWidgetData || isLoadingSetting || isLoadingPBTimeline) {
     return <></>;
   }
 
-  if (!setting) {
+  if (hasErrorWidgetData || !widgetData || hasErrorSetting || !setting || hasErrorPBTimeline || !pbTimeline) {
     return (
-      <div style={{ color: 'black', padding: 8 }}>
-        設定データ setting/setting{widgetName ? `_${widgetName}` : ''}.json がありません
-      </div>
+      <WarningContainer>
+        {(hasErrorWidgetData || !widgetData) && (
+          <Warning>ウィジェットデータが出力されていないか、不正なデータ形式です。</Warning>
+        )}
+        {(hasErrorSetting || !setting) && (
+          <Warning>
+            設定データ setting/setting{widgetName ? `_${widgetName}` : ''}.json が存在しないか、不正なデータ形式です。
+            <br />
+            JSON の構文チェックツール(
+            <a href="https://lab.syncer.jp/Tool/JSON-Viewer/" target="_blank" rel="noreferrer">
+              JSON Pretty Linter Ver3
+            </a>
+            )などを用いて、構文が間違っていないことを確認してください。
+            <br />
+            （最後の項目の後にはカンマ`,`が入るとエラーになるのが間違えやすいポイントです）
+          </Warning>
+        )}
+        {(hasErrorPBTimeline || !pbTimeline) && (
+          <Warning>
+            自己ベストデータ setting/pb.json が存在しないか、不正なデータ形式です。
+            <br />
+            JSON の構文チェックツール(
+            <a href="https://lab.syncer.jp/Tool/JSON-Viewer/" target="_blank" rel="noreferrer">
+              JSON Pretty Linter Ver3
+            </a>
+            )などを用いて、構文が間違っていないことを確認してください。
+            <br />
+            （最後の項目の後にはカンマ`,`が入るとエラーになるのが間違えやすいポイントです）
+          </Warning>
+        )}
+      </WarningContainer>
     );
   }
+
   if (!widgetData) {
     return <></>;
   }
@@ -176,3 +205,18 @@ const Separator = styled.hr`
 `;
 
 const Label = styled.div``;
+
+const WarningContainer = styled.div``;
+
+const Warning = styled.div`
+  background-color: rgba(0, 0, 0, 0.98);
+  padding: 8px;
+  color: #fff;
+  font-weight: bold;
+  margin: 8px;
+  border-radius: 8px;
+
+  a {
+    color: #ff6666;
+  }
+`;
