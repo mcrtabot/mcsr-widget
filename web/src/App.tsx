@@ -2,6 +2,7 @@ import { camelCase } from 'change-case';
 import React from 'react';
 import styled from 'styled-components';
 
+import { CompletedRunTimes } from './components/CompletedRunTimes';
 import { RecordTimeline, Timeline } from './components/Timeline';
 import { usePBSetting, useSetting, useWidgetData } from './hooks';
 
@@ -125,6 +126,12 @@ const App = () => {
                     />
                   );
                 })}
+              </React.Fragment>
+            );
+          } else if (item.startsWith('[CompletedRunTimes]')) {
+            return (
+              <React.Fragment key={index}>
+                <CompletedRunTimes records={widgetData.records} setting={setting.completedRunTimes} />
               </React.Fragment>
             );
           } else if (item.startsWith('[PersonalBest]')) {

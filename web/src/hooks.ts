@@ -57,9 +57,10 @@ export const useSetting = (name: string | null) => {
 
   const setting: Setting = {
     ...rawSetting,
-    pbTimeline: mergeTimelineSetting(rawSetting.timeline, rawSetting.pbTimeline),
-    currentRunTimeline: mergeTimelineSetting(rawSetting.timeline, rawSetting.currentRunTimeline),
-    recentRunsTimeline: mergeTimelineSetting(rawSetting.timeline, rawSetting.recentRunsTimeline),
+    pbTimeline: mergeTimelineSetting(rawSetting.timeline, rawSetting.pbTimeline || {}),
+    currentRunTimeline: mergeTimelineSetting(rawSetting.timeline, rawSetting.currentRunTimeline || {}),
+    recentRunsTimeline: mergeTimelineSetting(rawSetting.timeline, rawSetting.recentRunsTimeline || {}),
+    completedRunTimes: mergeTimelineSetting(rawSetting.timeline, rawSetting.completedRunTimes || {}),
   };
 
   return { isLoading, setting };

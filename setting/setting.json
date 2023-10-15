@@ -26,6 +26,7 @@
     "//": "利用できる項目",
     "//": "'[PersonalBest]' 自己ベストのタイムライン",
     "//": "'[CurrentRun]' 現在実行中のランのタイムライン",
+    "//": "'[CompletedRunTimes]' 完了したランの最終タイムのみの一覧",
     "//": "'[RecentRuns]' 最近のランのタイムライン",
     "//": "'[WorldNumber] | {style}' ワールド番号(スタイル指定可能)",
     "//": "'[Label] | {ラベルの内容} | {style}' ラベル",
@@ -38,7 +39,10 @@
         "[WorldNumber] | font-size: 32px; text-align: center;",
         "[CurrentRun]",
         "[---] | ",
-        "[Label] | Recent Runs ... | font-size: 18px;",
+        "[Label] | Completed | font-size: 18px;",
+        "[CompletedRunTimes]",
+        "[---] | ",
+        "[Label] | Recent | font-size: 18px;",
         "[RecentRuns]"
     ],
 
@@ -131,6 +135,12 @@
     },
     "//": "未完走のランのタイムラインを表示するか",
     "displayRecentRunsIncompletedRuns": true,
+
+    "//": "完了したランの最終タイムのみの一覧を表示するか、の上書き設定",
+    "//": "font, textColor, backgroundColor, displayTitle, title のみ有効",
+    "completedRunTimes": {
+        "displayTitle": false
+    },
 
     "//": "ワールドナンバーのタイプ (relative: ウィジェット開始からのカウント, absolute: ワールド名そのまま)",
     "//": "マルチインスタンスの場合relativeはうまく動作しないため、absoluteを設定するか、ワールドナンバーを利用しないでください。",

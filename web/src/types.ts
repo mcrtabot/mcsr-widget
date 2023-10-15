@@ -81,6 +81,7 @@ export type Setting = {
   pbTimeline: TimelineSetting;
   currentRunTimeline: TimelineSetting;
   recentRunsTimeline: TimelineSetting;
+  completedRunTimes: TimelineSetting;
   displayRecentRunsIncompletedRuns: boolean;
   worldNumberType: WorldNumberType;
 

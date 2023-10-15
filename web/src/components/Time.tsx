@@ -3,11 +3,16 @@ import React from 'react';
 type TimeProps = {
   value: number;
   displaySign?: boolean;
+  displayMilliSeconds?: boolean;
 };
 
-export const Time = ({ value, displaySign }: TimeProps) => {
+export const Time = ({ value, displaySign, displayMilliSeconds = false }: TimeProps) => {
   const t = parseTime(Math.abs(value) / 1000);
-  const hms = `${(t.h * 60 + t.m).toString().padStart(2, '0')}:${t.s.toString().padStart(2, '0')}`;
+  let hms = `${(t.h * 60 + t.m).toString().padStart(2, '0')}:${t.s.toString().padStart(2, '0')}`;
+  if (displayMilliSeconds) {
+    const milliseconds = `000${t.ms}`.slice(-3);
+    hms = hms + `.${milliseconds}`;
+  }
   return (
     <>
       {displaySign && (value >= 0 ? '+' : '-')}
