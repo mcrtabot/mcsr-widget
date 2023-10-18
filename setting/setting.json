@@ -126,6 +126,10 @@
         "title": "LIVE",
         "displayItemDiffTime": true
     },
+    "//": "現在のランのタイムラインに次のアイテム（次に行く場所）を表示するか",
+    "displayCurrentRunNextTimelineItem": true,
+    "//": "現在のランの進行中の項目の時間のスタイル (hyphen: '--:--', random: ランダムな数字)",
+    "currentRunNextTimelineItemStyle": "hyphen",
 
     "//": "最近のランのタイムラインの上書き設定",
     "recentRunsTimeline": {
@@ -135,6 +139,8 @@
     },
     "//": "未完走のランのタイムラインを表示するか",
     "displayRecentRunsIncompletedRuns": true,
+    "//": "最近のランの表示数",
+    "recentRunsItemCount": 10,
 
     "//": "完了したランの最終タイムのみの一覧を表示するか、の上書き設定",
     "//": "font, textColor, backgroundColor, displayTitle, title のみ有効",
@@ -145,11 +151,6 @@
     "//": "ワールドナンバーのタイプ (relative: ウィジェット開始からのカウント, absolute: ワールド名そのまま)",
     "//": "マルチインスタンスの場合relativeはうまく動作しないため、absoluteを設定するか、ワールドナンバーを利用しないでください。",
     "worldNumberType": "relative",
-
-    "//": "現在のランのタイムラインに次のアイテム（次に行く場所）を表示するか",
-    "displayCurrentRunNextTimelineItem": true,
-    "//": "現在のランの進行中の項目の時間のスタイル (hyphen: '--:--', random: ランダムな数字)",
-    "currentRunNextTimelineItemStyle": "hyphen",
 
     "//": ""
 }

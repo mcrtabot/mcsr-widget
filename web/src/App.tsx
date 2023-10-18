@@ -109,7 +109,7 @@ const App = () => {
           } else if (item.startsWith('[RecentRuns]')) {
             return (
               <React.Fragment key={index}>
-                {widgetData.records.slice(0, 20).map((record) => {
+                {widgetData.records.slice(0, setting.recentRunsItemCount).map((record) => {
                   if (!setting.displayRecentRunsIncompletedRuns && !record.is_completed) {
                     return <React.Fragment key={record.id} />;
                   }

@@ -4,10 +4,10 @@ export type TimelineItem = {
 };
 
 export type FontSetting = {
-  family: React.CSSProperties['fontFamily'];
-  size: React.CSSProperties['fontSize'];
-  style: React.CSSProperties['fontStyle'];
-  wight: React.CSSProperties['fontWeight'];
+  fontFamily?: React.CSSProperties['fontFamily'];
+  fontSize?: React.CSSProperties['fontSize'];
+  fontStyle?: React.CSSProperties['fontStyle'];
+  fontWeight?: React.CSSProperties['fontWeight'];
 };
 
 export type SpeedrunRecord = {
@@ -77,14 +77,20 @@ export type Setting = {
   separatorColor: string;
   components: string[];
   timelineItemLabels: { [key: string]: string };
-  timeline: TimelineSetting;
-  pbTimeline: TimelineSetting;
-  currentRunTimeline: TimelineSetting;
-  recentRunsTimeline: TimelineSetting;
-  completedRunTimes: TimelineSetting;
-  displayRecentRunsIncompletedRuns: boolean;
-  worldNumberType: WorldNumberType;
 
+  timeline: TimelineSetting;
+
+  pbTimeline: TimelineSetting;
+
+  currentRunTimeline: TimelineSetting;
   displayCurrentRunNextTimelineItem: boolean;
   currentRunNextTimelineItemStyle: TimelineNextItemStyle;
+
+  recentRunsTimeline: TimelineSetting;
+  displayRecentRunsIncompletedRuns: boolean;
+  recentRunsItemCount: number;
+
+  completedRunTimes: TimelineSetting;
+
+  worldNumberType: WorldNumberType;
 };

@@ -1,6 +1,7 @@
 import useSWR from 'swr/immutable';
 
-import { Setting, TimelineName, TimelineSetting, WidgetData } from './types';
+import { defaultSetting, mergeTimelineSetting } from './setting';
+import { Setting, TimelineName, WidgetData } from './types';
 
 const REFRESH_INTERVAL = 1000;
 
@@ -29,24 +30,6 @@ const convertTimeToMilliSeconds = (time?: string) => {
   );
 };
 
-const mergeTimelineSetting = (a: TimelineSetting, b: TimelineSetting) => {
-  const aFont = a.font || {};
-  const aItemLabelFont = { ...a.font, ...(a.itemLabelFont || {}) };
-  const aItemDiffTimeFont = { ...a.font, ...(a.itemDiffTimeFont || {}) };
-
-  const bFont = b.font || {};
-  const bItemLabelFont = { ...b.font, ...(b.itemLabelFont || {}) };
-  const bItemDiffTimeFont = { ...b.font, ...(b.itemDiffTimeFont || {}) };
-
-  return {
-    ...a,
-    ...b,
-    font: { ...aFont, ...bFont },
-    itemLabelFont: { ...aItemLabelFont, ...bItemLabelFont },
-    itemDiffTimeFont: { ...aItemDiffTimeFont, ...bItemDiffTimeFont },
-  };
-};
-
 export const useSetting = (name: string | null) => {
   const path = !name ? '/data/setting/setting.json' : `/data/setting/setting_${name}.json`;
   const { isLoading, data: rawSetting, error } = useSWR<Setting>(path, fetcher, { refreshInterval: REFRESH_INTERVAL });
@@ -56,6 +39,7 @@ export const useSetting = (name: string | null) => {
   }
 
   const setting: Setting = {
+    ...defaultSetting,
     ...rawSetting,
     pbTimeline: mergeTimelineSetting(rawSetting.timeline, rawSetting.pbTimeline || {}),
     currentRunTimeline: mergeTimelineSetting(rawSetting.timeline, rawSetting.currentRunTimeline || {}),
