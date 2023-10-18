@@ -86,6 +86,8 @@ const App = () => {
     color: setting.textColor,
   } as React.CSSProperties;
 
+  const currentTime = new Date().getTime();
+
   return (
     <Wrapper className="mcsr-widget" style={widgetStyle}>
       <WidgetContainer className="mcsr-widget-container" style={{ width: setting.width }}>
@@ -109,23 +111,38 @@ const App = () => {
           } else if (item.startsWith('[RecentRuns]')) {
             return (
               <React.Fragment key={index}>
-                {widgetData.records.slice(0, setting.recentRunsItemCount).map((record) => {
-                  if (!setting.displayRecentRunsIncompletedRuns && !record.is_completed) {
-                    return <React.Fragment key={record.id} />;
-                  }
-                  return (
-                    <RecordTimeline
-                      className="timeline timeline--recent"
-                      key={record.id}
-                      baseRunNumber={widgetData.base_run_number}
-                      record={record}
-                      pbTimeline={pbTimeline}
-                      timelineItemLabels={setting.timelineItemLabels}
-                      setting={setting.recentRunsTimeline}
-                      worldNumberType={setting.worldNumberType}
-                    />
-                  );
-                })}
+                {widgetData.records
+                  .filter((record) => {
+                    if (setting.displayRecentRunsIncompletedRuns) {
+                      // 未完了のランを表示する場合
+                      return true;
+                    }
+                    return record.is_completed;
+                  })
+                  .filter((record) => {
+                    if (!setting.recentRunsItemDisplayDuration) {
+                      // 最近のランの表示時間の設定がない場合
+                      return true;
+                    }
+                    console.log(currentTime, record.date, record.final_rta);
+                    return currentTime <= record.date + record.final_rta + setting.recentRunsItemDisplayDuration * 1000;
+                  })
+                  // 件数を絞る
+                  .slice(0, setting.recentRunsItemCount)
+                  .map((record) => {
+                    return (
+                      <RecordTimeline
+                        className="timeline timeline--recent"
+                        key={record.id}
+                        baseRunNumber={widgetData.base_run_number}
+                        record={record}
+                        pbTimeline={pbTimeline}
+                        timelineItemLabels={setting.timelineItemLabels}
+                        setting={setting.recentRunsTimeline}
+                        worldNumberType={setting.worldNumberType}
+                      />
+                    );
+                  })}
               </React.Fragment>
             );
           } else if (item.startsWith('[CompletedRunTimes]')) {

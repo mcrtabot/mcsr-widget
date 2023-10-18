@@ -105,6 +105,7 @@ export const defaultSetting: Setting = {
   } as TimelineSetting,
   displayRecentRunsIncompletedRuns: true,
   recentRunsItemCount: 10,
+  recentRunsItemDisplayDuration: 0,
 
   completedRunTimes: {
     displayTitle: false,

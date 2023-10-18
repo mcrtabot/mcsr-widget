@@ -89,6 +89,7 @@ export type Setting = {
   recentRunsTimeline: TimelineSetting;
   displayRecentRunsIncompletedRuns: boolean;
   recentRunsItemCount: number;
+  recentRunsItemDisplayDuration: number;
 
   completedRunTimes: TimelineSetting;
 

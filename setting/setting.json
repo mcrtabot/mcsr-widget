@@ -141,6 +141,8 @@
     "displayRecentRunsIncompletedRuns": true,
     "//": "最近のランの表示数",
     "recentRunsItemCount": 10,
+    "//": "最近のランの表示時間(秒、0は常に表示)",
+    "recentRunsItemDisplayDuration": 0,
 
     "//": "完了したランの最終タイムのみの一覧を表示するか、の上書き設定",
     "//": "font, textColor, backgroundColor, displayTitle, title のみ有効",
