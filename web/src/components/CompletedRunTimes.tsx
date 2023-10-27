@@ -36,7 +36,7 @@ export const CompletedRunTimes = ({
       )}
       {completedRecords.reverse().map((record, index) => (
         <Item key={record.id}>
-          <Title>{index + 1}.</Title>
+          <Label>{index + 1}.</Label>
           <TimeWrapper>
             <Time value={record.final_igt} />
           </TimeWrapper>
@@ -53,12 +53,16 @@ const Wrapper = styled.div`
   border-radius: 8px;
 `;
 
+const Title = styled.div`
+  text-align: center;
+`;
+
 const Item = styled.div`
   display: flex;
   justify-content: flex-start;
 `;
 
-const Title = styled.div`
+const Label = styled.div`
   min-width: 40px;
   text-align: right;
 `;
